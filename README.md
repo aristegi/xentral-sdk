@@ -1,8 +1,6 @@
 # Xentral ERP SDK (Currently only GET Resources)
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/deinebaustoffe/xentral-sdk.svg?style=flat-square)](https://packagist.org/packages/deinebaustoffe/xentral-sdk)
-[![Build Status](https://img.shields.io/travis/deinebaustoffe/xentral-sdk/master.svg?style=flat-square)](https://travis-ci.org/deinebaustoffe/xentral-sdk)
-[![Quality Score](https://img.shields.io/scrutinizer/g/deinebaustoffe/xentral-sdk.svg?style=flat-square)](https://scrutinizer-ci.com/g/deinebaustoffe/xentral-sdk)
 [![Total Downloads](https://img.shields.io/packagist/dt/deinebaustoffe/xentral-sdk.svg?style=flat-square)](https://packagist.org/packages/deinebaustoffe/xentral-sdk)
 
 Xentral ERP Bridge for Laravel 6.x

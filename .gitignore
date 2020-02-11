@@ -4,7 +4,7 @@ docs
 vendor
 coverage
 .phpunit.result.cache
-/.idea
+.idea
 /.idea/
 /.idea/composerJson.xml
 /.idea/vcs.xml
