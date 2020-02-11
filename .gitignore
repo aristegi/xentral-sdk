@@ -5,3 +5,12 @@ vendor
 coverage
 .phpunit.result.cache
 /.idea
+/.idea/
+/.idea/composerJson.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
+/.idea/xentral-sdk.iml
+/.idea/php.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/.gitignore
