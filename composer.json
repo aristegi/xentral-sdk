@@ -1,0 +1,57 @@
+{
+    "name": "deinebaustoffe/xentral-sdk",
+    "description": "Xentral ERP SDK for Laravel",
+    "keywords": [
+        "deinebaustoffe",
+        "xentral-sdk"
+    ],
+    "homepage": "https://github.com/deinebaustoffe/xentral-sdk",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Florian Wartner",
+            "email": "florian.wartner@deinebaustoffe.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "^6.5",
+        "illuminate/support": "^6.0",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Deinebaustoffe\\XentralSdk\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Deinebaustoffe\\XentralSdk\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Deinebaustoffe\\XentralSdk\\XentralSdkServiceProvider"
+            ],
+            "aliases": {
+                "XentralSdk": "Deinebaustoffe\\XentralSdk\\XentralSdkFacade"
+            }
+        }
+    }
+}
