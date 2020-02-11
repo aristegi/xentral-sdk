@@ -4,4 +4,5 @@ namespace Deinebaustoffe\XentralSdk;
 
 class XentralSdk
 {
+
 }

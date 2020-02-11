@@ -28,4 +28,46 @@ trait XentralClient
             'auth' => array(config('xentral-sdk.xentral_api_username'), config('xentral-sdk.xentral_api_key'), 'digest'),
         ]);
     }
+
+    /**
+     * @return string
+     */
+    private function generateHash()
+    {
+        $initKey = 'e560ddd931431edc62a529bcb173c3d0027376bc';
+        $appName = 'apibridge';
+        $date = gmdate('dmY');
+        $hash = null;
+
+        for($i = 0; $i <= 200; $i++) {
+            $hash = sha1($hash . $initKey . $appName . $date);
+        }
+
+        return $hash;
+    }
+
+    /**
+     * @param $methodname
+     * @param $xml
+     * @return false|string
+     */
+    public function sendRequest($methodname, $xml)
+    {
+        $url = config('xentral-sdk.xentral_host') . '/index.php?module=api&action=' . $methodname . '&hash=' . $this->generateHash();
+        $data = [
+            'xml' => $xml, 'md5sum' => md5($xml)
+        ];
+
+        $options = [
+            'http' => [
+                'header'  => "Content-type: application/x-www-form-urlencoded",
+                'method'  => 'POST',
+                'content' => http_build_query($data),
+            ],
+        ];
+
+        $context  = stream_context_create($options);
+
+        return file_get_contents($url, false, $context);
+    }
 }
