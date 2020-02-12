@@ -32,7 +32,7 @@ trait XentralClient
     /**
      * @return string
      */
-    private function generateHash()
+    public function generateHash()
     {
         $initKey = config('xentral-sdk.xentral_init_key');
         $appName = config('xentral-sdk.xentral_app_name');
@@ -49,11 +49,12 @@ trait XentralClient
     /**
      * @param $methodname
      * @param $xml
+     * @param $hash
      * @return false|string
      */
-    public function sendRequest($methodname, $xml)
+    public function sendRequest($methodname, $xml, $hash)
     {
-        $url = config('xentral-sdk.xentral_host') . '/index.php?module=api&action=' . $methodname . '&hash=' . $this->generateHash();
+        $url = config('xentral-sdk.xentral_host') . '/index.php?module=api&action=' . $methodname . '&hash=' . $hash;
         $data = [
             'xml' => $xml, 'md5sum' => md5($xml)
         ];
