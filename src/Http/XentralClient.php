@@ -34,8 +34,8 @@ trait XentralClient
      */
     private function generateHash()
     {
-        $initKey = 'e560ddd931431edc62a529bcb173c3d0027376bc';
-        $appName = 'apibridge';
+        $initKey = config('xentral-sdk.xentral_init_key');
+        $appName = config('xentral-sdk.xentral_app_name');
         $date = gmdate('dmY');
         $hash = null;
 
