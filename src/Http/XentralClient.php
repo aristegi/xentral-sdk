@@ -55,6 +55,15 @@ trait XentralClient
     public function sendRequest($methodname, $xml, $hash)
     {
         $url = config('xentral-sdk.xentral_host') . '/index.php?module=api&action=' . $methodname . '&hash=' . $hash;
+
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>
+          <request>
+            <status>
+              <function>'.$methodname.'</function>
+            </status>
+            <xml>'.$xml.'</xml>
+          </request>';
+
         $data = [
             'xml' => $xml, 'md5sum' => md5($xml)
         ];
