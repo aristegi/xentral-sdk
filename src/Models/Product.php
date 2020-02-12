@@ -24,4 +24,13 @@ class Product
     {
         return json_decode($this->client->get($this->url . '/artikel/' . $id)->getBody()->getContents(), true);
     }
+
+    /**
+     * @param $data
+     * @return mixed
+     */
+    public function createProduct($data)
+    {
+        return json_decode($this->client->post($this->url . '/artikel', $data)->getBody()->getContents(), true);
+    }
 }
