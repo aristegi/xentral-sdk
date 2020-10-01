@@ -43,6 +43,6 @@ class Product
      */
     public function updateProduct($id, $data)
     {
-        return $this->client->put($this->url . '/artikel/' . $id, $data);
+        return $this->client->post($this->url . '/ArtikelEdit/' . $id, $data);
     }
 }
