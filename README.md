@@ -3,7 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/deinebaustoffe/xentral-sdk.svg?style=flat-square)](https://packagist.org/packages/deinebaustoffe/xentral-sdk)
 [![Total Downloads](https://img.shields.io/packagist/dt/deinebaustoffe/xentral-sdk.svg?style=flat-square)](https://packagist.org/packages/deinebaustoffe/xentral-sdk)
 
-Xentral ERP Bridge for Laravel 6.x
+Xentral ERP Bridge for Laravel 6.x / 7.x / 8.x
 
 ## Installation
 
