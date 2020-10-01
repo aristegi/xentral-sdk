@@ -43,6 +43,6 @@ class Product
      */
     public function updateProduct($id, $data)
     {
-        return $this->client->putAsync($this->url . '/artikel/' . $id, [$data]);
+        return $this->client->putAsync($this->url . '/artikel/' . $id, $data);
     }
 }
