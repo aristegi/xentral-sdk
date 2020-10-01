@@ -43,6 +43,6 @@ class Product
      */
     public function updateProduct($id, $data)
     {
-        return json_decode($this->client->putAsync($this->url . '/artikel/' . $id, $data), true);
+        return json_decode($this->client->putAsync($this->url . '/artikel/' . $id, [$data]), true);
     }
 }
