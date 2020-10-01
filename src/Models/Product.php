@@ -18,6 +18,15 @@ class Product
     }
 
     /**
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function getAllProducts()
+    {
+        $pagination =  json_decode($this->client->get($this->url . '/artikel?items=1000')->getBody()->getContents(), true)['page_current'];
+        return $pagination;
+    }
+
+    /**
      * @param $id
      * @return mixed
      */
