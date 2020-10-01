@@ -3,6 +3,7 @@
 namespace Deinebaustoffe\XentralSdk\Models;
 
 use Deinebaustoffe\XentralSdk\Http\XentralClient;
+use RuntimeException;
 
 class Product
 {
@@ -32,5 +33,16 @@ class Product
     public function createProduct($data)
     {
         return json_decode($this->client->post($this->url . '/artikel', $data)->getBody()->getContents(), true);
+    }
+
+    /**
+     * @param mixed $id
+     * @param mixed $data
+     * @return mixed
+     * @throws RuntimeException
+     */
+    public function updateProduct($id, $data)
+    {
+        return json_decode($this->client->put($this->url . '/artikel/' . $id, $data)->getBody()->getContents(), true);
     }
 }
