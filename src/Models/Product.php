@@ -20,7 +20,7 @@ class Product
     /**
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function getAllProducts()
+    public function getPagination()
     {
         $pagination =  json_decode($this->client->get($this->url . '/artikel?items=1000')->getBody()->getContents(), true)['pagination'];
         return $pagination;
