@@ -22,7 +22,7 @@ class Product
      */
     public function getAllProducts()
     {
-        $pagination =  json_decode($this->client->get($this->url . '/artikel?items=1000')->getBody()->getContents(), true)['page_current'];
+        $pagination =  json_decode($this->client->get($this->url . '/artikel?items=1000')->getBody()->getContents(), true)['pagination'];
         return $pagination;
     }
 
