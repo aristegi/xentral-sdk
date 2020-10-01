@@ -14,7 +14,7 @@ class Product
      */
     public function getProducts($page = 1)
     {
-        return json_decode($this->client->get($this->url . '/artikel?items=1000&page' . $page)->getBody()->getContents(), true);
+        return json_decode($this->client->get($this->url . '/artikel?items=1000&page=' . $page)->getBody()->getContents(), true);
     }
 
     /**
