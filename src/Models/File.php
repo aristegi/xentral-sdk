@@ -27,6 +27,6 @@ class File
 
     public function searchFile($filename)
     {
-        return json_decode($this->client->get($this->url . '/dateien?dateiname=' . $filename)->getBody()->getContents(), true);
+        return json_decode($this->client->get($this->url . '/dateien?dateiname_startswith=' . $filename)->getBody()->getContents(), true);
     }
 }
